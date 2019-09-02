@@ -1,5 +1,6 @@
-## Skin, The Bark of Man
+#### Skin, The Bark of Man
 ## A Solution to the Engineering Physics Robot Competition
+## image of the robot
 
 Hello everyone. Every year the Engineering Physics Department at UBC creates a Summer robotics competition where 15-16 student teams are tasked with creating autonomous robots to preform a series of tasks and complete a mission. This tear's competition was themed after Marvel's Avengers.
 
@@ -30,7 +31,7 @@ Our general strategy ended up being one that depends on the reliabiility and acc
 
 And so it began, our jurny towards the creation of **Skin, Bark of Man**. Why call it that ? Well because obviosuly **Skin is the Bark of Man**.
 
-## Chassis and  Body Design
+### Chassis and  Body Design
 Well, first we needed to try out our idea of how the robot would look adn work. In addition, some of us working on software needed a prototype to tesk their code on.
 
 ## Image of our first design
@@ -45,8 +46,21 @@ After this we move to our other chassis version 2
 ## Image of the 3D model of the robot 
 ## Image of the 1 d base
 
-This chassis was designed to be sturdy. This chassis is one piece. That's right. One piece of aluminum was cut out using the waterjet cutter with holes and edge. Then this body was properly bent and different sides wereconnected to each other with fasteners, and nuts and bolts.While this is more difficult to build and connet , the benefit is the irgidity of the robot.Most teams chose to make their chassis out of hardboard with lase jet cutters. During  the testing process and the competition, robot often fell out of the platform and collided with objects and other robots.  the benefit of our  
+This chassis was designed to be sturdy. This chassis is one piece. That's right. One piece of aluminum was cut out using the waterjet cutter with holes and edge. Then this body was properly bent and different sides wereconnected to each other with fasteners, and nuts and bolts.While this is more difficult to build and connet , the benefit is the irgidity of the robot.Most teams chose to make their chassis out of hardboard with lase jet cutters. During  the testing process and the competition, robot often fell out of the platform and collided with objects and other robots. The benefit of our metallic chassis was that the collisions and the dropping didn't damage our robot significantly and this proved to be very helpfull during the competition.
 
+A couple of things to keep in mind for whoever decides to use a metallic chassis:
+1. Make sure that you electrical circuits do not touch the body. **Shorting circuits is BAD. like VERY BAD .**
+2. Try to make the chassis in a way that the circuits and interior of the robot could be change easily.
+3. Im not sure about this one -- If you are planning to use a robot that has two or three level and is tall, having the robot with too many nuts and bolts connection and too rigid would sometime reduce the control over the robot. 
+
+As for the wheels, we made the wheel out of **(what I don't know )** with the same dimensions of the toy wheel. We also added layers of **I forgot its name** to add to the friction. The reason for changing the wheel was that ,believe it or not , we needed more friction !
+
+## image of the wheel
+
+
+### Software
+
+In order to talk about the software, we need to talk about our processors. We were provided with free stm32 bluepills for the purpose of controlling the robot. These chips are small, cheap and lite and they can be programmed using **C and C++**. Every team was given a budget of 150 dollars
 
 
 
