@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+## Skin, The Bark of Man
+## A Solution to the Engineering Physics Robot Competition
 
 You can use the [editor on GitHub](https://github.com/valavakilian/RobotController/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
