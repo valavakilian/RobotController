@@ -152,10 +152,7 @@ The only other components are a debounced wsitch which is used to detect when we
 
 # The Competition
 
-
-
-
-
+<a href="https://BorealBlizzard.github.io/page1.html/">Page 2</a>
 
 
 
