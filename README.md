@@ -1,6 +1,8 @@
 # Skin, The Bark of Man
+# We are still under some construction, Sorry !
 ## A Solution to the Engineering Physics Robot Competition
-## image of the robot
+![Skin the Brak of Man ...](70392644_2051523764949376_1583569878147661824_n.jpg)
+
 
 Hello everyone. Every year the Engineering Physics Department at UBC creates a Summer robotics competition where 15-16 student teams are tasked with creating autonomous robots to preform a series of tasks and complete a mission. This tear's competition was themed after Marvel's Avengers.
 
@@ -14,7 +16,7 @@ Two robots are positioned at the starting points and turned on. for hte purpose 
 1. Retreat the Infinity Stones: Follow the black tapes to find intersections. From there, the robots must head to the post and pick up the infinity stone. The posts have the same circular base size with different heights. With this mission, the robot continues to follow the line back the its targetted gauntlet. There are six small and shallow holes on the gauntlet where the robot must drop the infinity stones. Robots could either drop the stones one at a time or they can pickup multiple stones and drop them at the same time at the end of the run. There are a total of 6 Infinity Stones and each one counts for 2 points if it is dropped in the gauntlet.
 ## image of infinity stone
 ## image of the posts
-## image of hte gauntlet (maybe that machine vision version )
+## image of the gauntlet (maybe that machine vision version )
 
 2. Save the Avengers: There are a number pluchies randomly placed around the track. The mission with the plushies is to detect them and to guide them toward the plushy droping zone. There are two dropping points , one for Methanos and one for Thanos. But how does each robot know where to drop them ? Well each of these dropping zones has a Infra Red beacon used to create two different frequencies. Depending on the role , the robot must choose which IR beacon it must follow adn must drop the plshies there. Every plushy successfully dropped the has 1 point only and there are a total of 5 different plushies. 
 ## image of plshies
@@ -24,6 +26,8 @@ The important note to keep in mind is that every round of the competition is onl
 
 ## Our Strategy
 Our initial strategy , after some time of working out possible solutions and testing them out (A list of these ideas like position tracking with a laser mouse, having a complicated 3-axis claw, using buke chains ) we decided to go with the strategy of picking up two stones from the shortest middle posts, going back to the gauntlet and dropping them off and then possibly going for plushies. As we though about going for plushies, we decided to use a camera and a Raspberry Pi to detect and go after the plushies. Since we decided to use a camera, we had the bold and dangerous idea of using the Pi Camera for the line following task as well. This decision led to a take a very different route for our robot design since the traditional method for line following is to use QRD sensors. 
+
+<a href="https://imgflip.com/gif/3awpf2"><img src="https://i.imgflip.com/3awpf2.gif" title="made at imgflip.com"/></a>
 
 ## Image of QRD sensors
 
@@ -55,7 +59,7 @@ A couple of things to keep in mind for whoever decides to use a metallic chassis
 
 As for the wheels, we made the wheel out of **(what I don't know )** with the same dimensions of the toy wheel. We also added layers of **I forgot its name** to add to the friction. The reason for changing the wheel was that ,believe it or not , we needed more friction !
 
-## image of the wheel
+![Skin the Brak of Man ...](70869839_545051122969047_2336191664739057664_n.jpg)
 
 We designed our chassis so that it would have a cutout in from of it with sloped walls leading to it. This way, we would need to be in the direction of the post and when we move forward, we will fit into the posts. We have a mechanical switch in the cavity that allows us to know when we have hit the post. This design choice ended up being a life saver.                                                      
 
@@ -72,6 +76,8 @@ We were provided with free stm32 BluePills for the purpose of controlling the ro
 
 ## Raspberry Pi Camera:
 We use a version 2, 8 MegaPixel Raspberry Pi Camera. The reason we used the version two model was because it had a higher framerate and with our algorithms, we were able to increse the framerate to 50 fps. Since we were planning on finding plushies and ther marks on the field, we needed to have the ability to change the angle of the camera. To this end, we attached the camera on a servo and controlled the servo with the Pi.  
+
+![Skin the Brak of Man ...](70392644_2051523764949376_1583569878147661824_n.jpg)
 
 Every team was given a budget of 150 dollars and since we decided to use a camera , we needed to use a stronger controller board. Which is why we decided to use a Raspberry Pi in addition to the bluepill boards. Our controller hierarchy look something like this :
 
@@ -102,7 +108,7 @@ A couple of notes for our PID control:
 3. It is important to keep in mind the maximum, minimum and base speeds have a significant effect on the PID controller. To top that off, so does the battery voltages. You would use battery regulators to keep the voltage provided constant but then you may risk capping out the current provided. So we needed to make sure we are having our batteries at a know range of voltages.
 4. Keep in mind the speed of the algorithm. Given that most PID controllers with line followers use a dedicated microcontrollers and run in a range of 1000 updates per second. 
 
-## Image of the line follower 
+<a href="https://imgflip.com/gif/3awp7v"><img src="https://i.imgflip.com/3awp7v.gif" title="made at imgflip.com"/></a>
 
 One other important piece in the code is the detection of intersection. To this end, we always checked the length of the black line. If the length of the black line is larger than normal, we count that as a detected intersection. Again, the speed of the robot and update time for the algorithm really effect the detection of intersections.
 
@@ -114,12 +120,20 @@ Time to talk about the arm
 
 The arm itself was coposed of three servo motors. One for changing the Z-axis angle, anotehr for the XY-plane angle and the other for closing and openning the arm. One of the main reasons we decided to use this arm was its reliablitiy. 
 
+
 ## Image of the arm
 
 Given that we arrive at the posts, we were almost always able to pick up the stones. One main reason was the use of arduinos and the fact that the arm itself was rigid. The gens were all in different hshapes and sizes so the arm grip and its position were important, making servos a viable option. The arm itself was made out of *I FORGOT* to make it as lightweight as possible.
 
+<a href="https://imgflip.com/gif/3awpl2"><img src="https://i.imgflip.com/3awpl2.gif" title="made at imgflip.com"/></a>
+
+
+
 After the arm picks up the stones, it drops them into two yellow funnels. These funnels have servos at the bottom which open when we arrive at the gauntlet in order to drop the stones into the shallow holens on the gauntlet.
 The entire arm and dispensing servoes are controlled by one BluePill which communicates with the Raspberry Pi.
+
+<a href="https://imgflip.com/gif/3awpqg"><img src="https://i.imgflip.com/3awpqg.gif" title="made at imgflip.com"/></a>
+
 
 And now, lets move on to the electrical components of the robot.
 
@@ -127,69 +141,33 @@ And now, lets move on to the electrical components of the robot.
 
 Here are a list of the electrical components:
 
+
 - **H_bridge Circuit**: 
 
 ## Image of the circuit and the schematics
 This circuit is our main drive controller board. The circuit simply takes ina PWM signal from the BluPill and send it to the motors. One component of the circuit includes an OptoIsolator which disconnects the ground of the mtotr from the geound of the circuit. This is because the motor creates a lot of noise on its channel and a could damage the BluePill. Therefore, it is imperative to seperate the two from each other. **More Explanation requierd here**. This circuit is powered with a 16 Volt lipo battery.
 
+
+![Skin the Brak of Man ...](70817571_901591420211422_8514916339565985792_n.jpg)
+
+
 - **OptoIsolator Circuit**:
 The concept of this circuit is simple. We use this circuit to both power the servos and sends the pwm signals. One major reason behind using this circuit is because we decided to use the same 16 Volt lipo battery with a regulated voltage. Since that battery grounds with the Barber Colman motor, we needed to make sure the ground of the motor doesn't connect with the BluePills. Therefore we have 6 optoisolators. 3 for the arm and two for the dispensing tubes.
 
-## image of the optoisolator circuit
+![Skin the Brak of Man ...](70422108_2471018806507541_7287727707880685568_n.jpg)
 
 - **BluePill circuits**:
 This is a simple circuit which powers the two BluePills and has a regulator to bring down the voltage for 5 volts. This circuit is powered by a 8v lipo.
 
-## image of the circuit
+![Skin the Brak of Man ...](71049407_380775019508606_944748313830227968_n.jpg)
 
 - **Additional Components** :
 The only other components are a debounced wsitch which is used to detect when we are at the post and the Raspberry Pi. The Pi and is conneted to the camera servo, switch and the two BluPills. The Pi itself is powered by another 8 volt lipo. There is a power switch connected to the 8 volt lipo for the Pi which regulates the voltage to 5 volts.
 
 ### The overall connection
-**We could put some drawing of the connections**
-
+![Skin the Brak of Man ...](70960511_465331177659830_429396592437493760_n.jpg)
 # Our Mistakes
 
-# The Competition
+# The Competition outcome
+We cam in Forth 
 
-<a href="https://BorealBlizzard.github.io/page1.html/">Page 2</a>
-
-
-
-
-
-You can use the [editor on GitHub](https://github.com/valavakilian/RobotController/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/valavakilian/RobotController/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
